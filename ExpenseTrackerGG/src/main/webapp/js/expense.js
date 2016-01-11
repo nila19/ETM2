@@ -1,3 +1,8 @@
+// Keep this in synch with expense.properties.
+//var APP_PATH = "/ExpenseTrackerGG";
+var APP_PATH = "/.";
+var PAGE_SIZE = 12;
+
 //******************************************************************************************
 //*************************************** Login Page ***************************************
 
