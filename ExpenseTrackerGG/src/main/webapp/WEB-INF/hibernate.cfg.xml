@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="expense">
+		<mapping class="com.expense.mvc.model.entity.Transaction" />
+		<mapping class="com.expense.mvc.model.entity.Account" />
+		<mapping class="com.expense.mvc.model.entity.Category" />
+		<mapping class="com.expense.mvc.model.entity.DataKey" />
+		<mapping class="com.expense.mvc.model.entity.TallyHistory" />
+		<mapping class="com.expense.mvc.model.entity.Bill" />
+	</session-factory>
+</hibernate-configuration>

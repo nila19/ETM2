@@ -1,0 +1,287 @@
+/****************************************************************************************************/
+/*********************************************** Definition *****************************************/
+@imgpath: "../images";
+
+.img (@img) {
+	background-image:url("@{imgpath}/@{img}");
+}
+.icon (@w, @h) {
+	background-size: @w @h;
+	background-repeat:no-repeat;
+}
+.iconlink (@w, @h) {
+	.icon (@w, @h);
+	cursor: pointer;
+}
+.padding(@px: 8px) {
+	padding-left: @px;
+	padding-right: @px;
+	padding-top: @px;
+	padding-bottom: @px;
+}
+.shadow {
+	-moz-box-shadow: 1px 1px 1px #AAA;
+	-webkit-box-shadow: 1px 1px 1px #AAA;
+	box-shadow: 1px 1px 1px #AAA;
+}
+.radius(@px: 5px) {
+	-moz-border-radius: @px;
+	border-radius: @px;
+}
+
+.font(@px, @weight: normal) {
+	font: @px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-weight: @weight;
+}
+.font(@px, @weight, @color) {
+	font: @px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: @color;
+	font-weight: @weight;
+}
+.italic {
+	font-style: italic;
+}
+.bg(@bg) {
+	background-color: @bg;
+}
+.bg(@bg, @color) {
+	background-color: @bg;
+	color: @color;
+}
+.block {
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+@txt-grey: #666666;
+@txt-white: #ffffff;
+@txt-greyd: #2F2C2C;
+@txt-green: #30bf30;
+@txt-red: #bf3030;
+
+@blue-vl: #e5eFFe;
+@blue-l: #b5D1FB;
+@blue-m: #84B3F8;
+@blue-d: #678FC2;
+@blue-vd: #375F92;
+@red-l: #fee5ef;
+@red-m: #f88f84;
+@green-l: #cfdfb2;
+@green-m: #b4cf88;
+@grey-m: #dfdfdf;
+@grey-l: #e9e9e9;
+@grey-vl: #f4f4f4;
+@grey-vvl: #fdfdfd;
+@brown-m: #ada27b;
+@brown-l: #c9bc8d;
+@white: #ffffff;
+
+@img-accept: "accept24.png";
+@img-usd: "usa.jpg";
+@img-inr: "india.jpg";
+@img-upload: "upload24.png";
+@img-edit: "edit16.png";
+@img-delete: "delete16.png";
+@img-adj: "budget16.png";
+@img-up: "up16.png";
+@img-down: "down16.png";
+@img-adhoc: "shopping-basket16.png";
+@img-tally: "tally24.png";
+@img-tallyHL: "tally24-hl.png";
+@img-left: "navigate-left24.png";
+@img-right: "navigate-right24.png";
+@img-card: "payment-card24.png";
+@img-cash: "US-dollar24.png";
+@img-entryPanel: "home24.png";
+@img-green: "trafficlight-green24.png";
+@img-red: "trafficlight-red24.png";
+
+/****************************************************************************************************/
+/************************************************** Menu ********************************************/
+
+.menu {	.font(12px); .block; }
+.menuHL {
+	.menu; .bg(@blue-m, @txt-white); cursor: pointer;
+	&:hover { .bg(@blue-l); }
+}
+.menuSel { .menu; .bg(@blue-l, @txt-white); }
+.menuBar { .menu; .bg(@blue-vl, @txt-grey); }
+.menuBarDKBlue { .menu; .bg(@blue-l, @txt-white); }
+.menuBarDKRed { .menu; .bg(@red-l, @txt-grey); }
+.menuDKGo {
+	.img(@img-accept);
+	.iconlink(20px, 20px);
+	background-color: @blue-vl;
+}
+.menuDKUSD {
+	.img(@img-usd);
+	.icon(28px, 20px);
+}
+.menuDKINR {
+	.img(@img-inr);
+	.icon(28px, 20px);
+}
+.menuUpload {
+	.img(@img-upload);
+	.iconlink(20px, 20px);
+	background-color: @blue-vl;
+}
+
+/****************************************************************************************************/
+/************************************************** Menu ********************************************/
+
+.acCard {
+	.img(@img-card);
+	.icon(24px, 24px);
+}
+.acCash {
+	.img(@img-cash);
+	.icon(24px, 24px);
+}
+.bulbGreen {
+	.img(@img-green);
+	.icon(20px, 20px);
+}
+.bulbRed {
+	.img(@img-red);
+	.icon(20px, 20px);
+}
+.bulbRedHL {
+	.bulbRed; cursor: pointer;
+	&:hover { .bulbGreen; }
+}
+
+/****************************************************************************************************/
+/*********************************************** General UI *****************************************/
+
+.bodybg {
+	position: relative; top: 0px;
+	width: 100%; height: 100%;
+}
+.loginHeader {
+	.font(14px, bold, @blue-vd); .padding;
+	border-bottom: 1px solid @blue-d;
+}
+.bodyDecision { .bg(@grey-vl); }
+.sectionDecision { .bg(@grey-vvl); padding: 4px; .shadow; }
+.tableDecision { .font(12px); padding: 0px; }
+.msgSuccess { .font(12px, normal, @txt-green); }
+.msgError { .font(12px, normal, @txt-red); }
+
+/****************************************************************************************************/
+/********************************************** Grid & Nav *****************************************/
+.dgEdit {
+	.img(@img-edit);
+	.iconlink(16px, 16px);
+}
+.dgDelete {
+	.img(@img-delete);
+	.iconlink(16px, 16px);
+}
+.dgAdj {
+	.img(@img-adj);
+	.iconlink(16px, 16px);
+}
+.dgAdhoc {
+	.img(@img-adhoc);
+	.iconlink(16px, 16px);
+}
+.dgUp {
+	.img(@img-up);
+	.iconlink(16px, 16px);
+}
+.dgDown {
+	.img(@img-down);
+	.iconlink(16px, 16px);
+}
+.navLeft {
+	.img(@img-left);
+	.iconlink(20px, 20px);
+}
+.navRight {
+	.img(@img-right);
+	.iconlink(20px, 20px);
+}
+
+/****************************************************************************************************/
+/************************************************* Summary *******************************************/
+
+.sum-header { .font(12px); }
+.sum-headerGreen { .sum-header; .bg(@green-m, @txt-white); }
+.sum-headerGrey { .sum-header; .bg(@grey-vl); }
+.sum-headerBlue { .sum-header; .bg(@blue-d, @txt-white); }
+.sum-headerBlueHL {
+	.sum-header; cursor: pointer;
+	.bg(@blue-d, @txt-white);
+	&:hover { .bg(@blue-l); }
+}
+.sum-headerBlueMed { .sum-header; .bg(@blue-m, @txt-white); }
+.sum-headerBrown { .sum-header; .bg(@brown-m, @txt-white); }
+.sum-headerBrownLight { .sum-header; .bg(@brown-l, @txt-white); }
+.sum-data { .font(11px); }
+.sum-dataBlue {.sum-data; .bg(@blue-m, @txt-white); }
+.sum-dataGrey {
+	.sum-data; cursor: pointer; 
+	.bg(@grey-m, @txt-greyd); 
+	&:hover { .bg(@blue-l, @txt-white); } 
+}
+.sum-dataGreyLight {
+	.sum-data; cursor: pointer; 
+	.bg(@grey-l, @txt-greyd); 
+	&:hover { .bg(@blue-l, @txt-white); } 
+}
+
+/****************************************************************************************************/
+/************************************************** Tally *******************************************/
+
+.tally { .font(11px); .block; }
+.tallyBlueHL {
+	.tally; .bg(@blue-m, @txt-white); cursor: pointer;
+	&:hover { .bg(@blue-l); }
+}
+.tallyBlueLight { .tally; .bg(@blue-vl, @txt-grey); }
+.tallyGreenHL {
+	.tally; .bg(@green-m, @txt-white); cursor: pointer;
+	&:hover { .bg(@green-l); }
+}
+.tallyGreen { .tally; .bg(@green-m, @txt-white); }
+.tallyRedHL {
+	.tally; .bg(@red-m, @txt-white); cursor: pointer;
+	&:hover { .bg(@red-l); }
+}
+.tallyRedLight { .tally; .bg(@red-l, @txt-grey); }
+
+.entryPanel {
+	.img(@img-entryPanel);
+	.iconlink(24px, 24px);
+	background-color: @blue-l;
+}
+.tallyButton {
+	padding: 0px;
+	.radius(2px);
+}
+.tallyButtonInner {
+	.img(@img-tally);
+	.iconlink(24px, 24px);
+	background-color: @white;
+    &:hover {
+		.img(@img-tallyHL);
+	}
+}
+
+/****************************************************************************************************/
+/*************************************************** PF *********************************************/
+
+.pf { .block; }
+.pfblue { .bg(@blue-m, @txt-white); }
+.pfgreen { .bg(@green-m, @txt-white); }
+.pfred { .bg(@red-m, @txt-white); }
+
+/****************************************************************************************************/
+/************************************************* Search *******************************************/
+
+.searchHeader { .font(12px); .bg(@green-m, @txt-white); }
+.searchHeaderGreyTxt { .font(12px); .bg(@green-m, @txt-greyd); }
+.searchTotal { .font(12px); .bg(@blue-m, @txt-white); }
